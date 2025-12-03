@@ -12,11 +12,15 @@ INSERT INTO productos (codigo, nombre, precio, stock, id_categoria) VALUES
 ('CAR-003', 'Cargador Inalámbrico', 39.99, 15, 3),
 ('MEM-002', 'Memoria USB 500GB', 199.99, 6, 4),
 ('MEM-003', 'SSD 1TB', 399.99, 10, 4),
-('MOU-002', 'Mouse Logitik', 349.99, 25, 5);
-('MOU-002', 'Mouse DE CABLE', 109.99, 25, 5);
+('MOU-002', 'Mouse Logitik', 349.99, 25, 5),
+('MOU-003', 'Mouse DE CABLE', 109.99, 25, 5);
 
 COMMIT;
 
+START TRANSACTION;
+/* 10 productos con errores de datos
+Genera errores de tipo, se insertan Strings en donde van numeros
+*/
 
 INSERT INTO productos (codigo, nombre, precio, stock, id_categoria) VALUES
 ('CAB-002', 'Cable USB-D', 'AAAAAAAAAAAAAAAAAAAAAAAAAAA', 20, 1),
@@ -27,5 +31,7 @@ INSERT INTO productos (codigo, nombre, precio, stock, id_categoria) VALUES
 ('CAR-003', 'Cargador Inalámbrico', 39.99, 15, 3),
 ('MEM-002', 'Memoria USB 500GB', 199.99, 6, 4),
 ('MEM-003', 'SSD 1TB', 399.99, 10, 4),
-('MOU-002', 'Mouse Logitik', 349.99, 25, 5);
-('MOU-002', 'Mouse DE CABLE', 109.99, 25, 5);
+('MOU-004', 'Mouse Logitik', 349.99, 25, 5),
+('MOU-005', 'Mouse DE CABLE', 109.99, 25, 5);
+
+COMMIT;
