@@ -1,0 +1,28 @@
+[mysqld]
+# Archivo base de configuración
+
+# Configuración de conexiones
+max_connections = 200
+
+# Configuración de InnoDB
+innodb_buffer_pool_size = 512M
+
+# Configuración de timeouts
+wait_timeout = 300
+
+# Configuración de logs
+general_log = ON
+general_log_file = /var/lib/mysql/general.log
+
+# Configuración de Slow Query Log
+slow_query_log = ON
+slow_query_log_file = /var/lib/mysql/slow.log
+long_query_time = 2
+
+# Configuración de charset y collation
+character-set-server = utf8mb4
+collation-server = utf8mb4_unicode_ci
+
+# Configuración de red y rendimiento
+skip_name_resolve = 1
+max_allowed_packet = 64M
